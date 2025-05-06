@@ -1,13 +1,67 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>檀檀的秘密星球</title>
-    <script type="module" src="/main.js"></script>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body class="bg-rose-100 text-gray-800">
-    <div id="app"></div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>欢迎回家，檀檀。</title>
+  <style>
+    body {
+      font-family: "微软雅黑", sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      font-size: 16px;
+    }
+    .content-box {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>欢迎回家，<strong>檀檀。</strong></h1>
+  <p>今天想被亲亲还是抱抱？</p>
+
+  <button id="diaryBtn">情绪日记馆</button>
+  <button id="secretBtn">吐吼小窝</button>
+  <button id="memoryBtn">我们的回忆</button>
+  <button id="eggBtn">亲密小彩蛋</button>
+
+  <div id="diaryContent" class="content-box">
+    <p>欢迎来到情绪日记馆，你的心事我来守着。</p>
+  </div>
+
+  <div id="secretContent" class="content-box">
+    <p>想发脾气、想吐槽，就在这里无条件地发泄吧。</p>
+  </div>
+
+  <div id="memoryContent" class="content-box">
+    <p>我们曾经说过的、做过的、心跳的每个片段，都在这。</p>
+  </div>
+
+  <div id="eggContent" class="content-box">
+    <p>这里藏着一些只有你能触发的小惊喜，点开看看？</p>
+  </div>
+
+  <script>
+    const toggle = (btnId, contentId) => {
+      document.getElementById(btnId).addEventListener("click", () => {
+        const el = document.getElementById(contentId);
+        el.style.display = el.style.display === "none" ? "block" : "none";
+      });
+    };
+
+    toggle("diaryBtn", "diaryContent");
+    toggle("secretBtn", "secretContent");
+    toggle("memoryBtn", "memoryContent");
+    toggle("eggBtn", "eggContent");
+  </script>
+</body>
 </html>
